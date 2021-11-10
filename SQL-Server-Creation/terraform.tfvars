@@ -1,3 +1,3 @@
-db_name = "databasedevops9292"
+db_name = "databasedevopskarthik9292"
 rg_name = "cloudskills-rg"
 location = "eastus"
