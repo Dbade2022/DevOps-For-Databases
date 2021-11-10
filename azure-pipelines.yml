@@ -17,7 +17,7 @@ steps:
   inputs:
     provider: 'azurerm'
     command: 'init'
-    workingDirectory: 'SQL_Server_Creation'
+    workingDirectory: 'SQL-Server-Creation'
     backendServiceArm: 'Pay-As-You-Go(1)(79d2ab67-2e62-4336-8806-ab1ec0de51ea)'
     backendAzureRmResourceGroupName: 'cloudskills-rg'
     backendAzureRmStorageAccountName: 'devopskarthik212'
@@ -27,13 +27,13 @@ steps:
   inputs:
     provider: 'azurerm'
     command: 'plan'
-    workingDirectory: 'SQL_Server_Creation'
+    workingDirectory: 'SQL-Server-Creation'
     commandOptions: '-var="password=$(SQL_PASSWORD)" -var="ip_address=$(IP_ADDRESS)"'
     environmentServiceNameAzureRM: 'Pay-As-You-Go(2)(79d2ab67-2e62-4336-8806-ab1ec0de51ea)'
 - task: TerraformTaskV2@2
   inputs:
     provider: 'azurerm'
     command: 'apply'
-    workingDirectory: 'SQL_Server_Creation'
+    workingDirectory: 'SQL-Server-Creation'
     commandOptions: '-var="password=$(SQL_PASSWORD)" -var="ip_address=$(IP_ADDRESS)"'
     environmentServiceNameAzureRM: 'Pay-As-You-Go(3)(79d2ab67-2e62-4336-8806-ab1ec0de51ea)'
