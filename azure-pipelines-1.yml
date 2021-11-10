@@ -14,8 +14,8 @@ steps:
   inputs:
     azureSubscription: 'Pay-As-You-Go(1)(79d2ab67-2e62-4336-8806-ab1ec0de51ea)'
     ServerName: 'databasedevopskarthik9292.mysql.database.azure.com'
-    SqlUsername: '$(SQL-User)'
-    SqlPassword: '$(SQL-Password)'
+    SqlUsername: '$(SQL_User)'
+    SqlPassword: '$(SQL_Password)'
     TaskNameSelector: 'SqlTaskFile'
     SqlFile: 'SQL-Query/createusers.sql'
     IpDetectionMethod: 'AutoDetect'
