@@ -1,0 +1,21 @@
+# Starter pipeline
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+
+trigger:
+- main
+
+pool:
+  vmImage: ubuntu-latest
+
+steps:
+- task: AzureMysqlDeployment@1
+  inputs:
+    azureSubscription: 'Pay-As-You-Go(1)(79d2ab67-2e62-4336-8806-ab1ec0de51ea)'
+    ServerName: 'databasedevopskarthik9292.mysql.database.azure.com'
+    SqlUsername: 'SQL-User'
+    SqlPassword: 'SQL-Password'
+    TaskNameSelector: 'SqlTaskFile'
+    SqlFile: 'SQL-Query/createusers.sql'
+    IpDetectionMethod: 'AutoDetect'
